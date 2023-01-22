@@ -26,18 +26,64 @@ NOR gate is actually a combination of two logic gates: OR gate followed by NOT g
 
 F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
-## Logic Diagram
+
 ## Procedure
+### Step 1
+Create a project with required entities.
+### Step 2
+Create a module along with respective file name.
+### Step 3
+Run the respective programs for the given boolean equations.
+### Step 4
+Run the module and get the respective RTL outputs.
+### Step 5
+Create university program(VWF) for getting timing diagram.
+### Step 6
+Give the respective inputs for timing diagram and obtain the results.
 ## Program:
+```
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Adhithya.S
+RegisterNumber: 22005823 
 */
-## RTL realization
+NAND gate:
+module combine2(a,b,c,d,e);
+input a,b,c,d;
+output e;
+wire x,y,z;
+assign x=(~c & b & a); 
+assign y=(~d & c & c & a); 
+assign z=(c & ~b & a);
+assign e=(~(~x & ~y & ~z)); 
+endmodule 
+NOR gate:
+module combine2(a,b,c,d,e);
+input a,b,c,d;
+output e;
+wire x,y,z;
+assign x=(~c & b & a); 
+assign y=(~d & c & c & a); 
+assign e=((x | y & |z));
+endmodule
+```
+
 
 ## Output:
-## RTL
+### RTL
+NOR GATE:
+![output](/norgate.png.png)
+NAND GATE:
+![output](/notgate.png.png)
 ## Timing Diagram
+NOR GATE:
+![output](/nordiagram.png.png)
+NAND GATE:
+![output](/notdiagram.png.png)
+## Truth Table
+NOR GATE:
+![output](/nortruthtable.png.png)
+NAND GATE:
+![output](/nottruthtable.png.png)
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
